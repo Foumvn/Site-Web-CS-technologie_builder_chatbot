@@ -6,26 +6,31 @@
         <title>CS Technologie</title>
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/3010b1eaf1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-   <link rel="stylesheet" href="./style.css">
-   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link rel="icon" href="img/logo.ico">
+        <script src="https://kit.fontawesome.com/3010b1eaf1.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+        <link rel="stylesheet" href="./style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        <link rel="icon" href="img/logo.ico">
     </head>
     <body>
 
     <body>
-    
+       
     <!-- header  -->
     <header>
         <!-- menu responsive -->
-        
+        @if ($success)
+            <div class="alert alert-success">
+                             {{ $success }}
+            </div>
+        @endif  
+
         <div class="menu_toggle">
             <span></span>
         </div>
@@ -41,7 +46,7 @@
 
         </ul>
         <div class="logo">
-            <p><span>CS</span>Technologie <span>builder</span></p>
+            <p><span>CS</span>Technology <span>builder</span></p>
         </div>
     </header>
     <!-- section Acceuil -->
@@ -162,9 +167,11 @@
             <div class="slide-container">
             
             <div class="slides">
-                <img src="img/Laptop.jpg" class="active">
-                <img src="img/kerfin7_nea_2796.jpg">
-                <img src="img/male.png">
+                <img src="img/securite.jpg" class="active">
+                <img src="img/mobile.jpg">
+                <img src="img/web.jpg">
+                <img src="img/Maintenance.jpg">
+                
             </div>
         
             <div class="buttons">
@@ -291,31 +298,31 @@
                 <i class="fa-solid fa-screwdriver-wrench"></i>
                 <h3>Developpement Web</h3>
                 <p>Nous déployons des solutions web efficace et integrable selon vos besoins </p>
-                 <a href="#" class="read_more">Lire Plus</a>
+                 <a href="/DevWeb" class="read_more">Lire Plus</a>
             </div>
             <div class="service">
                 <i class="fa-solid fa-screwdriver-wrench"></i>
                 <h3>Maintenance informatique</h3>
                 <p>Ce service est plus centrer sur l'entretien des machines ordinateur (laptop, desktop ) </p>
-                 <a href="#" class="read_more">Lire Plus</a>
+                 <a href="/Maintenance" class="read_more">Lire Plus</a>
             </div>
             <div class="service">
                 <i class="fa-solid fa-screwdriver-wrench"></i>
                 <h3>Graphique design</h3>
                 <p>Construisez des design abile pour vos cibles  </p>
-                 <a href="#" class="read_more">Lire Plus</a>
+                 <a href="/GraphDesign" class="read_more">Lire Plus</a>
             </div>
             <div class="service">
                 <i class="fa-solid fa-screwdriver-wrench"></i>
                 <h3>Developpement d'application mobile</h3>
                 <p>Nous construisons des applications robuste et efficace pour vos besoins.</p>
-                 <a href="#" class="read_more">Lire Plus</a>
+                 <a href="/DevApp" class="read_more">Lire Plus</a>
             </div>
             <div class="service">
                 <i class="fa-solid fa-screwdriver-wrench"></i>
                 <h3>Sécurité des reseaux</h3>
                 <p>possédez plus de liberté sur les réseaus avec nos services de sécurité.</p>
-                 <a href="#" class="read_more">Lire Plus</a>
+                 <a href="/Securite" class="read_more">Lire Plus</a>
             </div>
         </div>
         <h1 class="section_title">Témoignages</h1>
@@ -420,14 +427,16 @@
                 <h3>Notre Adresse</h3>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10499.966567606692!2d2.285747998068967!3d48.85836977022069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1644955637071!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-
+            
             <div class="form_contact">
+               
                 <h3>Envoyer un message</h3>
-                <form action="#">
-                    <input type="text"placeholder="Nom">
-                    <input type="email"placeholder="Adresse Mail">
-                    <input type="text"placeholder="Objet">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <form action="/ajouter" method="POST" id=myForm>
+                    @csrf
+                    <input type="text"placeholder="Nom" name="nom">
+                    <input type="email"placeholder="Adresse Mail" name="mail">
+                    <input type="text"placeholder="Objet" name="object">
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
                     <input type="submit" value="Envoyer">
                 </form>
             </div>
@@ -485,14 +494,23 @@ imageContainer.addEventListener('mouseleave', () => {
 <script src="assets/js/main.js"></script>
 
 </body>
+
    
     <script>
         var botmanWidget = {
+            title:"BuilderMan",
             aboutText: 'Write Something',
-            introMessage: "Hi, moi c'est builderMan votre assistant bot de coeur...🤖 "
-        };
+            mainColor:"#35b90d",
+            aboutLink:"https://botman.io",
+            introMessage: "Hi, moi c'est builderMan votre assistant bot de coeur...🤖 ",
+             };
     </script>
    
     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+
+
+<!-- Script pour rester sur un scroll apres enregistrement -->
+
+    
        
 </html> 

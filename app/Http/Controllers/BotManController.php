@@ -14,18 +14,60 @@ class BotManController extends Controller
     {
         $botman = app('botman');
    
-        $botman->hears('{message}', function($botman, $message) {
+        $botman->hears('{message}', function(BotMan $botman, $message) {
+
+            $botman->typesAndWaits(2);
+
+            if($message=='Bonjour'){
+                $botman->reply("Utilisez Hi pour converser avec moi...");
+
+            }
    
-            if ($message == 'Hi') {
-                $this->askName($botman);
+            if ($message == 'Hi' || $message == 'hi') {
+                $services = [
+                    'Developpement Web 💻',
+                    'Maintenance informatique 🪛',
+                    'Developpement d application mobile 📱',
+                    'Sécurité des reseaux 🌍',
+                    'Graphique design '
+                ];
+                
+                $message = 'Hello! bienvenu à cs technoligie, moi cest builderMan toujours apte à vous aider à construire vos projects 😉... Voici quelques de nos services :';
+                
+               /* for ($i = 0; $i < strlen($message); $i++) {
+                    $caractere = $message[$i];
+                    $botman->typesAndWaits(0.7); // Délai d'affichage de chaque caractère
+                    */
+                    $botman->reply($message);
+                    $botman->typesAndWaits(2);
+
+                    $botman->reply($services[0]);
+                    $botman->typesAndWaits(2);
+
+                    $botman->reply($services[1]);
+                    $botman->typesAndWaits(1);
+
+                    $botman->reply($services[2]);
+                    $botman->typesAndWaits(1);
+
+                    $botman->reply($services[3]);
+                    $botman->typesAndWaits(1);
+
+                    $botman->reply($services[4]);
+                    $botman->typesAndWaits(1);
+
+
+
+                //}
+                
+
             }
             
-            else{
-                $botman->reply("Ecrivez Hi pour un Dialogue avec moi...");
+            if($message=="OK"||$message=="merci"){
+                $botman->reply("de rien le plaisir est partage 💓😊... ");
             }
-            if($message== 'Quels sont vos objectif') {
-                $this->Objectif($botman);
-            }
+            
+            
    
         });
    
@@ -43,6 +85,13 @@ class BotManController extends Controller
             $name = $answer->getText();
    
             $this->say('Nice to meet you '.$name);
+        });
+    }
+
+    public function answer($botman){
+
+        $botman->hears('Hi', function (BotMan $bot) {
+            listerServices($bot);
         });
     }
 

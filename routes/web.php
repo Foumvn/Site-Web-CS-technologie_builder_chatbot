@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BotManController;
+use App\Http\Controllers\FormulairesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,35 @@ use App\Http\Controllers\BotManController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome')->with('success', session('success'));
 });
 
 
  Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
+
+ Route::post('/ajouter',[FormulairesController::class,'ajouter_']);
+
+ // Navigation
+ Route::get('/DevWeb', function () {
+    return view('DevWeb');
+});
+
+Route::get('/DevApp', function () {
+    return view('DevApp');
+});
+
+
+
+Route::get('/Securite', function () {
+    return view('Securite');
+});
+
+Route::get('/GraphDesign', function () {
+    return view('GraphDesign');
+});
+
+Route::get('/Maintenance', function () {
+    return view('Maintenance');
+});
+
 
